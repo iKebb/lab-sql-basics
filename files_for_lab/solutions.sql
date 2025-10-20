@@ -40,7 +40,7 @@ ORDER BY status
 
 What is the `loan_id` of the highest payment received in the `loan` table?
 
-SELECT loan_id, payments FROM loan
+SELECT loan_id FROM loan
 ORDER BY payments DESC
 LIMIT 1
 */
@@ -60,9 +60,10 @@ LIMIT 5
 What are the `account_id`s with the lowest loan `amount` 
 that have a loan `duration` of 60 in the `loan` table?
 
-SELECT account_id, amount FROM loan
+SELECT account_id FROM loan
 WHERE duration = 60
 ORDER BY amount ASC
+LIMIT 5
 */
 
 /* ### Query 8
@@ -75,7 +76,7 @@ ORDER BY k_symbol
 /* ### Query 9
 
 In the `order` table, what are the `order_id`s of the client with the `account_id` 34?
-SELECT order_id, account_id FROM "order"
+SELECT order_id	 FROM "order"
 WHERE account_id = 34
 */
 
@@ -85,7 +86,7 @@ In the `order` table, which `account_id`s were responsible for orders between
 `order_id` 29540 and `order_id` 29560 (inclusive)?
 
 SELECT DISTINCT account_id FROM "order"
-WHERE order_id >= 29540 AND order_id < 29560
+WHERE order_id >= 29540 AND order_id <= 29560
 */
 
 /* ### Query 11
